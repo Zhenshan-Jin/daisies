@@ -38,11 +38,11 @@ def get_locations(texts):
     for text in texts:
         doc = nlp(text)
         
-        
         for ent in doc.ents:
             if ent.label_ in ["GPE"]:
                 coordinates = address_to_coordinates(ent.text)
-                locations.append(coordinates)
+                if coordinates["latitude"]:
+                    locations.append(coordinates)
     
     return {"result": locations}
 
