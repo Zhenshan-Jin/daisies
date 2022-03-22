@@ -33,16 +33,18 @@ def coordinates_to_address(latitude, longitude):
     
     return data
 
-def get_locations(text):
-    doc = nlp(text)
-    
+def get_locations(texts):
     locations = []
-    for ent in doc.ents:
-        if ent.label_ in ["GPE"]:
-            coordinates = address_to_coordinates(ent.text)
-            locations.append(coordinates)
+    for text in texts:
+        doc = nlp(text)
+        
+        
+        for ent in doc.ents:
+            if ent.label_ in ["GPE"]:
+                coordinates = address_to_coordinates(ent.text)
+                locations.append(coordinates)
     
-    return locations
+    return {"result": locations}
 
 
 if __name__ == "__main__": 
