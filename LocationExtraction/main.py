@@ -15,22 +15,10 @@ def address_to_coordinates(address):
 
     data = {
         "address": location.address if location else None,
-        "latitude": location.latitude if location else None,
-        "longitude": location.longitude if location else None,
+        "lat": location.latitude if location else None,
+        "lon": location.longitude if location else None,
     }
 
-    return data
-
-def coordinates_to_address(latitude, longitude):
-    geolocator = Nominatim(user_agent="daisi_geocoder")
-    location = geolocator.reverse(f"{latitude}, {longitude}")
-    
-    data = {
-        "address": location.address if location else None,
-        "latitude": location.latitude if location else None,
-        "longitude": location.longitude if location else None,
-    }
-    
     return data
 
 def get_locations(texts):
@@ -41,12 +29,7 @@ def get_locations(texts):
         for ent in doc.ents:
             if ent.label_ in ["GPE"]:
                 coordinates = address_to_coordinates(ent.text)
-                if coordinates["latitude"]:
+                if coordinates["lat"]:
                     locations.append(coordinates)
     
     return {"result": locations}
-
-
-if __name__ == "__main__": 
-    print(address_to_coordinates("Champ de Mars, Paris, France"))
-    print(coordinates_to_address(52.509669, 13.376294))
