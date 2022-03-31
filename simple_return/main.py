@@ -1,3 +1,5 @@
+import GoogleNews
+
 def hello(name):
     return name
 
