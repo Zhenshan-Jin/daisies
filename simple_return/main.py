@@ -1,5 +1,5 @@
 import GoogleNews
-import pydasi
+import spacy
 
 def hello(name):
     return name
