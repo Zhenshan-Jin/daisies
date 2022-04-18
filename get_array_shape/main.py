@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def get_shape(array):
+def get_size(array):
     """
     image: object from PIL.image.open
     """
