@@ -1,9 +1,10 @@
 import numpy as np
+import pandas as pd
 
 
-def get_size(array):
+def get_size(array:pd.DataFrame):
     """
     image: object from PIL.image.open
     """
     
-    return np.frombuffer(array).size
+    return np.load(array).size
