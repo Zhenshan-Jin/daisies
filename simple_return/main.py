@@ -1,4 +1,4 @@
-def hello(name):
+def compute(name):
     return name
 
 # add comments
