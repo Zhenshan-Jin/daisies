@@ -7,5 +7,3 @@ def compute(name):
 def run(name):
     time.sleep(3)
     return name
-
-# add comments
