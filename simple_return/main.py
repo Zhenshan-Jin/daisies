@@ -1,5 +1,5 @@
 import time
-
+import spacy
 def compute(name):
     time.sleep(3)
     return name
