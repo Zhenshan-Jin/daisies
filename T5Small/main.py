@@ -6,7 +6,6 @@ model = T5ForConditionalGeneration.from_pretrained("/pebble_tmp/models/t5-small"
 # tokenizer = T5Tokenizer.from_pretrained("t5-small")
 # model = T5ForConditionalGeneration.from_pretrained("t5-small")
 
-
 def translate(text: str, source: str="English", dest: str="French", max_length=100) -> str:
     """
     Translate text from source to dest
